@@ -1,6 +1,6 @@
 # Pr1_32
 
-This project aims at reproducing the methodology described in the paper by considering the datasets provided.
+This project aims at performing a topic modeling analysis by using the datasets provided.
 
 The `dataset` folder contains the datasets.
 
