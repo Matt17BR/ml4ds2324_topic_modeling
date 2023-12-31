@@ -1,6 +1,5 @@
 - check if we can scrape another db besides pubmed (gscholar/researchgate have no official api)
 - check which papers are relevant to sports injuries/perf
-- maybe add journal to the references w/ abs dataset
 - perform topic modeling on both title AND abstract at the same time
 - add the following variables to the dataset:
     1. an **ai technique** variable according to the AI techniques listed in paper's Table 2
