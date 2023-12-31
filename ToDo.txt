@@ -1,3 +1,4 @@
+- check if we can scrape another db besides pubmed (gscholar/researchgate have no official api)
 - Check which papers are relevant to sports injuries/perf
 - maybe add journal to the references w/ abs dataset
 - Perform topic modeling on both title AND abstract at the same time
@@ -7,5 +8,4 @@
     * a `sport` variable according to the categories: basketball, soccer, volleyball, baseball, handball, australian football, ice hockey, american football, cricket, field hockey and rugby
     * an `ai for predicting injury risk` variable with respect to the various sports
     * an `ai for predicting sporting performance` variable with respect to the various sports
-- Check if search key terms can be included in the dataset.
 - Check if the computed topics can be useful to define search key terms and identify ai techniques listed in Table 2 (understand if you can use them to compose a message and perform a search activity)
