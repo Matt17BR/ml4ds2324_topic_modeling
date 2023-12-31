@@ -1,0 +1,59 @@
+Author,Title
+"López-Valenciano A, Ayala F, Puerta JM, et al",A preventive model for muscle injuries: a novel approach based on learning algorithms
+Li C,Predict the neural network mathematical model of basketball team scores based on improved BP algorithm
+Lu G,Evaluation model of young basketball players ’physical quality and basic technique based on RBF neural network
+Wu L,The participating team ’s technical analysis of women ’s basketball in the 30th Olympic Games based on neural network
+Zhang Q,Prediction based on basketball competition video athlete behaviors and on-line RBF neural network application
+"Kempe M, Grunz A, Memmert D",Detecting tactical patterns in basketball: comparison of merge self-organising maps and dynamic controlled neural networks
+"Bianchi F, Facchinetti T, Zuccolotto P",Role revolution: towards a new meaning of positions in basketball
+"Tilp M, Schrapf N",Analysis of tactical defensive behavior in team handball by means of artificial neural networks
+"Hassan A, Schrapf N, Ramadan W, et a l",Evaluation of ta ctical training in team handball by means of artificial neural networks
+"Hassan A, Schrapf N, Tilp M",The prediction of action positions in team handball by non-linear hybrid neural networks
+"Schrapf N, Alsaied S, Tilp M",Tactical interaction of offensive and defensive teams in team handball analysed by artificial neural networks
+"Abdullah MR, Maliki ABHM, Musa RM, et al",Intelligent prediction of soccer technical skill on youth soccer player ’s relative performance using multivariate analysis and artificial neural network techniques
+"Strnad D, Nerat A, Kohek Š",Neural network models for group behavior prediction: a case of soccer match attendance
+"Park YJ, Kim HS, Kim D, et al",A deep learning-based sports player evaluation model based on game statistics and news articles
+"Tümer AE, Koçer S",Prediction of team league ’s rankings in volleyball by artificial neural network method
+"Croft H, Lamb P, Middlemas S",The application of self-organising maps to performance analysis data i n rugby union
+"Fuster-Parra P, Garcia-Mas A, Cantallops J, et al",Ranking features on psychological dynamics of cooperative team work through Bayesian networks
+"Link D, Hoernig M",Individual ball possession in soccer
+Healey G,"Learning, visualizing, and assessing a model for the intrinsic value of a batted ball"
+"Jelinek HF, Kelarev A, Robinson DJ, et al",Using meta-regression data mining to improve predictions of performance based on heart rate dynamics for Australian football
+"Robertson S, Back N, Bartlett JD",Explaining match outcome in elite Australian Rules football using team performance indicators
+"Woods CT, Veale J, Fransen J, et al",Classification of playing position in elite junior Australian football using technical skill indicators
+"Leicht AS, Gomez MA, Woods CT",Explaining match outcome during the men ’s basketball tournament at the Olympic Games
+"Leicht AS, Gomez MA, Woods CT",Team performance indicators explain outcome during women ’s basketball matches at the Olympic Games
+Cene E,What is the difference bet ween a winning and a losing team: insights from Euroleague basketball
+"Montoliu R, Martin-Felez R, Torres-Sospedra J, et al",Team activity recognition in Association Football using a Bag-of-Words-based method
+"Carpita M, Sandri M, Simonetto A, et al",Discovering the drivers of football match outcomes with data mining
+Bock JR,Empirical prediction of turnovers in NFL Football
+"Morgan S, Williams MD, Barnes C",Applying decision tree induction for identification of important attributes in one-versus-one player interactions: a hockey exemplar
+"Hoch T, Tan X, Leser R, et al",A knowledge discovery framework for the assessment of tactical behaviour in soccer based on spatiotemporal data
+Sankaran S,Comparing pay versus performance of IPL Bowlers: an application of cluster analysis
+Wang M,Evaluating technical and tactical abilities of football teams in euro 2012 based on improved information entropy model and SOM neural networks
+"Vales-Alonso J, Chaves-Dieguez D, Pablo LM, et al",SAETA: a smart coaching assistant for professional volleyball training
+Sheng L,Study of application of factors of volleyball game based on data mining
+"Haiyan J, Jianqiang F",Application of data mining in technical and tactical analysis of volleyball match
+"Kolbush J, Sokol J",A logistic regression/Markov chain model for American college football
+"Zi M, Gao D",Technical and tactical analysis of basketball match based on data mining
+"Schulte O, Khademi M, Gholami S, et al","A Markov Game model for valuing actions, locations, and team performance in ice hockey"
+Bock JR,Pitch sequence complexity and long-term pitcher performance
+Soto VC,Predicting win-loss outcomes in MLB regular season games-a comparative study using data mining methods
+Demers S,Riding a probabilistic support vector machine to the Stanley Cup
+"Gu W, Saaty TL, Whitaker R",Expert system for ice hockey game prediction: data mining with human judgment
+"Wang Y, Zhao Y, Chan RHM, et al",Volleyball skill assessment using a single wearable micro inertial measurement unit at wrist
+"Pai PF, ChangLiao LH, Lin KP",Analyzing basketball games by a support vector machines with decision tree model
+"Qilin S, Xiaomei W, Xiaoling F, et al",Study on knee joint injury in college football training based on artificial neural network
+"Adetiba E, Iweanya VC, Popoola SI, et al",Automated detection of heart defects in athletes based on electrocardiography and artificial neural network
+"Ertelt T, Solomonovs I, Gronwald T",Enhancement of force patterns classification based on Gaussian distributions
+Ge S,Research on the factors of basketball injury in physical teaching based on artificial neural network
+"Bartlett JD, O ’Connor F, Pitchford N, et al",Relationships between internal and external training load in team-sport athletes: evidence for an individualized approach
+"Kautz T, Groh BH, Hannink J, et al",Activity recognition in beach volleyball using a deep convolutional neural network
+"Pensgaard AM, Ivarsson A, Nilstad A, et al","Psychosocial stress factors, including the relationship with the coach, and their influence on acute and overuse injury risk in elite female football players"
+"Ruddy JD, Shield AJ, Maniar N, et al",Predictive modeling of hamstring strain injuries in elite Au stralian Footballers
+"Rossi A, Pappalardo L, Cintia P, et al",Effective injury forecasting in soccer with GPS training data and machine learning
+"Thornton HR, Delaney JA, Duthie GM, et al",Importance of various training- load measures in injury incidence of professional Rugby League athletes
+"Jaspers A, De Beéck TO, Brink MS, et al",Relationships between the external and internal training load in professional soccer: what can we learn from machine learning? Int J Sports Physiol Perform
+"Goswami R, Dufort P, Tartaglia MC, et al",Frontotemporal correlates of impulsivity and machine learning in retired professional athletes with a history of multiple concussions
+"Wu LC, Kuo C, Loza J, et al",Detection of American football head impacts using biomechanical features and support vector machine classification
+"Whiteside D, Martini DN, Lepley AS, et al",Predictors of ulnar collateral ligament reconstruction in Major League Baseball pitchers
