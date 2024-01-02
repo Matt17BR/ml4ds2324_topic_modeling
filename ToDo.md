@@ -1,3 +1,4 @@
-- in the sports_ai_techniques notebook, perfect the matching techniques
-- slightly edit keywords in the searching paper so we can get more matches
-- make some plots or tables to include in a presentation for the project
+- check all comments across the notebooks and add them in a consistent way
+- in the keywords_search notebook, improve used keywords so that we can get intersections
+- for sports_ai_techniques see if we can extract keywords for new variables from topic_modeling
+- make some plots or tables to include in a presentation for the project, see figure 2 & 3 from paper
