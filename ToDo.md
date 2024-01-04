@@ -1,6 +1,10 @@
+## Maximum priority:
+
 - ask and answer some research questions (tailored around the results we've got)
 - check all comments across the notebooks and add them in a consistent way
+- make some more plots or tables to include in a presentation for the project (see figure 2 & 3 from paper)
+
+## If time allows:
+
 - in the keywords_search notebook, improve used keywords so that we can get intersections
 - for sports_ai_techniques see if we can extract keywords for new variables from topic_modeling
-- make some plots or tables to include in a presentation for the project (word clouds + see figure 2 & 3 from paper)
-- clean code up (suppress package loading output, dont load the same package twice in the same notebook etc.)
