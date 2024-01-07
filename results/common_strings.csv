@@ -1,51 +1,48 @@
 String,Frequency
-team,47
-use,38
-performance,33
-base,30
-data,29
-model,28
-network,24
-match,24
-football,22
+team,49
+data,37
+performance,34
+model,30
+base,26
+network,26
+match,26
+football,26
+classification,22
+analysis,22
+injury,21
 neural,21
-classification,20
-analysis,20
-game,20
-indicator,20
-injury,19
-basketball,19
-player,18
-ball,18
-outcome,18
+game,21
+outcome,21
+indicator,21
+basketball,20
+player,20
+ball,20
+method,18
+approach,17
 machine,17
+study,17
+athlete,16
 classify,16
-study,15
-approach,14
-athlete,14
-method,14
-decision,13
+feature,15
+sport,15
+soccer,15
+accuracy,14
+turnover,14
+prediction,13
 provide,13
-play,13
-regression,13
-training,12
-=,12
+position,13
+tree,13
+learning,12
+decision,12
+time,12
+classifier,12
 professional,12
-learning,11
-feature,11
+factor,11
 olympic,11
-sport,11
 different,11
-time,11
-tree,11
-prediction,10
-accuracy,10
-train,10
-may,10
-position,10
-soccer,10
-classifier,10
-turnover,10
+play,11
+training,11
+regression,11
 performance indicators,14
 team performance,13
 neural network,12
@@ -66,9 +63,6 @@ individual ball,5
 australian football,5
 classification accuracy,5
 vector machine,5
-mir 146a,5
-146a 5p,5
 team performance indicators,10
 artificial neural network,5
 support vector machine,5
-mir 146a 5p,5
