@@ -1,6 +1,4 @@
 ## Maximum priority:
-
-- update comments in topic_modeling (they are inaccurate wrt the data shown in the tables)
 - ask and answer some research questions (tailored around the results we've got)
 - make some more plots or tables to include in a presentation for the project (see figure 2 & 3 from paper)
 
