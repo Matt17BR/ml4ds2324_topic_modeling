@@ -7,6 +7,4 @@
 
 ## If time allows:
 
-- in topic modeling and everywhere keywords are used, remove words with less than or exactly 3 characters 
-- in the keywords_search notebook, improve used keywords so that we can get intersections
 - for sports_ai_techniques see if we can extract keywords for new variables from topic_modeling
