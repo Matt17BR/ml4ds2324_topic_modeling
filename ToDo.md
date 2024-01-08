@@ -1,5 +1,5 @@
 ## Maximum priority:
-Make a presentation
+- Make a presentation
 
 ## If time allows:
 
