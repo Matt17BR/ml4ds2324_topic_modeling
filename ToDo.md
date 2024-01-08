@@ -1,5 +1,5 @@
 ## Maximum priority:
-- ask and answer some research questions (tailored around the results we've got)
+Make a presentation
 
 ## If time allows:
 
