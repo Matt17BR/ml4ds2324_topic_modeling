@@ -7825,7 +7825,8 @@ main {
     <span class="k">except</span><span class="p">:</span>
         <span class="n">journal_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">year_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paper</span><span class="p">[</span><span class="s1">'MedlineCitation'</span><span class="p">][</span><span class="s1">'Article'</span><span class="p">][</span><span class="s1">'Journal'</span><span class="p">][</span><span class="s1">'JournalIssue'</span><span class="p">][</span><span class="s1">'PubDate'</span><span class="p">][</span><span class="s1">'Year'</span><span class="p">])</span>
+        <span class="n">year_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">paper</span><span class="p">[</span><span class="s1">'MedlineCitation'</span><span class="p">][</span><span class="s1">'Article'</span><span class="p">][</span><span class="s1">'Journal'</span><span class="p">][</span><span class="s1">'JournalIssue'</span><span class="p">][</span><span class="s1">'PubDate'</span><span class="p">][</span><span class="s1">'Year'</span><span class="p">])</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="n">year_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
 
@@ -8323,7 +8324,8 @@ main {
             <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">'-/'</span><span class="p">,</span> <span class="s1">'  '</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
             <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
             <span class="n">pos_tags</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-            <span class="n">lem_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">get_wordnet_pos</span><span class="p">(</span><span class="n">tag</span><span class="p">))</span> <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">pos_tags</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+            <span class="n">lem_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">get_wordnet_pos</span><span class="p">(</span><span class="n">tag</span><span class="p">))</span> 
+                         <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">pos_tags</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
             <span class="n">cleaned_titles</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">lem_words</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">cleaned_titles</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">]</span>
@@ -8404,8 +8406,8 @@ main {
     <span class="p">}])</span>
     <span class="k">return</span> <span class="n">styled_df</span>
 
-<span class="c1"># Stemming and Lemmatization prove to to showcase similar results for the first few most common words,</span>
-<span class="c1"># as opposed to the basic counter.</span>
+<span class="c1"># Stemming and Lemmatization prove to to showcase similar results</span>
+<span class="c1"># for the first few most common words, as opposed to the basic counter.</span>
 <span class="c1"># From a linguistic perspective this makes sense as i.e. the basic counter</span>
 <span class="c1"># would count the words and some form of modification as separate words.</span>
 
@@ -9195,7 +9197,8 @@ main {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [322]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Introduce a counter algorithm for identifying the most repeating bigrams and trigrams in the Title.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Introduce a counter algorithm for identifying</span>
+<span class="c1"># the most repeating bigrams and trigrams in the Title.</span>
 
 <span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">trigrams</span>
 
@@ -9386,9 +9389,11 @@ Most common trigrams in Title and Abstract: [(('team', 'performance', 'indicator
 
 <span class="n">counts_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"String"</span><span class="p">,</span> <span class="s2">"Frequency"</span><span class="p">])</span>
 <span class="c1">#Concatenate bigrams/trigrams</span>
-<span class="n">counts_df</span><span class="p">[</span><span class="s1">'String'</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts_df</span><span class="p">[</span><span class="s1">'String'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">counts_df</span><span class="p">[</span><span class="s1">'String'</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts_df</span><span class="p">[</span><span class="s1">'String'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                                                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
 <span class="c1">#Remove some of the entries that have numerical characters in them stemming from results and references to other papers</span>
-<span class="n">counts_df</span> <span class="o">=</span> <span class="n">counts_df</span><span class="p">[</span><span class="n">counts_df</span><span class="p">[</span><span class="s1">'String'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">all</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="ow">or</span> <span class="n">char</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">x</span><span class="p">))]</span>
+<span class="n">counts_df</span> <span class="o">=</span> <span class="n">counts_df</span><span class="p">[</span><span class="n">counts_df</span><span class="p">[</span><span class="s1">'String'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">all</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="ow">or</span> <span class="n">char</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span>
+                                                              <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">x</span><span class="p">))]</span>
 
 <span class="c1">#Export to csv for future use</span>
 <span class="n">counts_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'..'</span><span class="p">,</span><span class="s1">'results'</span><span class="p">,</span><span class="s1">'common_strings.csv'</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -9723,7 +9728,8 @@ Most common trigrams in Title and Abstract: [(('team', 'performance', 'indicator
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">phrases_freq_TA</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">TA_bigrams</span> <span class="o">+</span> <span class="n">TA_trigrams</span><span class="p">)</span>
-<span class="n">phrases_freq_TA</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">phrases_freq_TA</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="ow">or</span> <span class="n">char</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">x</span><span class="p">)}</span>
+<span class="n">phrases_freq_TA</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">phrases_freq_TA</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                   <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span> <span class="ow">or</span> <span class="n">char</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">x</span><span class="p">)}</span>
 
 <span class="n">wordcloud_phrases</span> <span class="o">=</span> <span class="n">custom_wordcloud</span><span class="p">()</span><span class="o">.</span><span class="n">generate_from_frequencies</span><span class="p">(</span><span class="n">phrases_freq_TA</span><span class="p">)</span>
 
@@ -9792,10 +9798,14 @@ Most common trigrams in Title and Abstract: [(('team', 'performance', 'indicator
           <span class="s2">"american football"</span><span class="p">,</span> <span class="s2">"cricket"</span><span class="p">,</span> <span class="s2">"hockey"</span><span class="p">,</span> <span class="s2">"rugby"</span><span class="p">,</span> <span class="s2">"beach volley"</span><span class="p">]</span>
 
 <span class="c1"># Add the list of AI techniques included in the paper</span>
-<span class="n">ai_techniques</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"lasso"</span><span class="p">,</span> <span class="s2">"bayesian logistic"</span><span class="p">,</span> <span class="s2">"bayesian network"</span><span class="p">,</span> <span class="s2">"decision tree"</span><span class="p">,</span> <span class="s2">"fuzzy clustering"</span><span class="p">,</span>
-                 <span class="s2">"k-means"</span><span class="p">,</span> <span class="s2">"k-nearest"</span><span class="p">,</span> <span class="s2">"markov process"</span><span class="p">,</span> <span class="s2">"support vector machine"</span><span class="p">]</span>
+<span class="n">ai_techniques</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"lasso"</span><span class="p">,</span> <span class="s2">"bayesian logistic"</span><span class="p">,</span> <span class="s2">"bayesian network"</span><span class="p">,</span>
+                 <span class="s2">"decision tree"</span><span class="p">,</span> <span class="s2">"fuzzy clustering"</span><span class="p">,</span> <span class="s2">"k-means"</span><span class="p">,</span>
+                 <span class="s2">"k-nearest"</span><span class="p">,</span> <span class="s2">"markov process"</span><span class="p">,</span> <span class="s2">"support vector machine"</span><span class="p">]</span>
 
-<span class="n">keywords_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">strings</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sports</span><span class="o">+</span><span class="n">ai_techniques</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'String'</span><span class="p">])],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">keywords_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">strings</span><span class="p">,</span>
+                         <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sports</span><span class="o">+</span><span class="n">ai_techniques</span><span class="p">,</span>
+                                      <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'String'</span><span class="p">])],</span>
+                                      <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
 
 <span class="n">keywords_df</span>
 </pre></div>
@@ -10110,7 +10120,10 @@ Most common trigrams in Title and Abstract: [(('team', 'performance', 'indicator
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Grouping the strings by category and constructing the search query for title and abstract only</span>
 <span class="c1"># Search is performed verbatim</span>
-<span class="n">search_query</span> <span class="o">=</span> <span class="s1">' AND '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">keywords_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Category'</span><span class="p">)[</span><span class="s1">'String'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">'("'</span> <span class="o">+</span> <span class="s1">'"[Title/Abstract] OR "'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'"[Title/Abstract])'</span><span class="p">))</span>
+<span class="n">search_query</span> <span class="o">=</span> <span class="s1">' AND '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">keywords_df</span><span class="o">.</span><span class="n">groupby</span>
+                            <span class="p">(</span><span class="s1">'Category'</span><span class="p">)[</span><span class="s1">'String'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span>
+                            <span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">'("'</span> <span class="o">+</span>
+                             <span class="s1">'"[Title/Abstract] OR "'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'"[Title/Abstract])'</span><span class="p">))</span>
 <span class="n">search_query</span>
 </pre></div>
 </div>
@@ -10155,7 +10168,8 @@ Most common trigrams in Title and Abstract: [(('team', 'performance', 'indicator
     <span class="n">Entrez</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
     <span class="c1"># Set how the search should be performed</span>
     <span class="n">handle</span> <span class="o">=</span> <span class="n">Entrez</span><span class="o">.</span><span class="n">esearch</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="s1">'pubmed'</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">'relevance'</span><span class="p">,</span> <span class="n">term</span><span class="o">=</span><span class="n">query</span><span class="p">,</span>
-    <span class="c1"># Set how many results to return (we do not expect more than 10000 or so based on the paper results)</span>
+    <span class="c1"># Set how many results to return</span>
+    <span class="c1"># (we do not expect more than 10000 or so based on the paper results)</span>
     <span class="n">retmax</span><span class="o">=</span><span class="s1">'10000'</span><span class="p">,</span> <span class="n">retmode</span><span class="o">=</span><span class="s1">'xml'</span><span class="p">,</span>
     <span class="c1"># Just like the paper, only search up to May 2018</span>
     <span class="n">mindate</span><span class="o">=</span><span class="s1">'1900/01'</span><span class="p">,</span> <span class="n">maxdate</span><span class="o">=</span><span class="s1">'2018/05'</span><span class="p">)</span>
@@ -10500,7 +10514,9 @@ Most common trigrams in Title and Abstract: [(('team', 'performance', 'indicator
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define dictionary of AI techniques based on Table 2 and their most plausible corresponding aliases</span>
 <span class="n">ai_techniques</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"Absolute Shrinkage and Selection Operator"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"LASSO"</span><span class="p">,</span> <span class="s2">"Least Absolute Shrinkage and Selection Operator"</span><span class="p">,</span> <span class="s2">"L1 Regularization"</span><span class="p">],</span>
+    <span class="s2">"Absolute Shrinkage and Selection Operator"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"LASSO"</span><span class="p">,</span>
+                                                  <span class="s2">"Least Absolute Shrinkage and Selection Operator"</span><span class="p">,</span>
+                                                  <span class="s2">"L1 Regularization"</span><span class="p">],</span>
     <span class="s2">"Artificial Neural Network"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"ANN"</span><span class="p">,</span> <span class="s2">"Neural Net"</span><span class="p">,</span> <span class="s2">"Deep Learning"</span><span class="p">,</span> <span class="s2">"Perceptron"</span><span class="p">,</span> 
                                   <span class="s2">"Self-organising map"</span><span class="p">,</span> <span class="s2">"Self-organizing map"</span><span class="p">,</span> <span class="s2">"SOM"</span><span class="p">],</span>
     <span class="s2">"Bayesian Logistic"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Bayesian Regression"</span><span class="p">,</span> <span class="s2">"Bayesian Model"</span><span class="p">],</span>
@@ -10508,11 +10524,15 @@ Most common trigrams in Title and Abstract: [(('team', 'performance', 'indicator
                           <span class="s2">"Probabilistic Directed Acyclic Graphical Model"</span><span class="p">],</span>
     <span class="s2">"Decision Tree Classifier"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Decision Tree"</span><span class="p">,</span> <span class="s2">"Classification Tree"</span><span class="p">,</span> <span class="s2">"Tree Classifier"</span><span class="p">,</span> 
                                  <span class="s2">"Classification And Regression Tree"</span><span class="p">,</span> <span class="s2">"CART"</span><span class="p">],</span>
-    <span class="s2">"Fuzzy Clustering"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Fuzzy C-means"</span><span class="p">,</span> <span class="s2">"Soft Clustering"</span><span class="p">,</span> <span class="s2">"Fuzzy K-means"</span><span class="p">,</span> <span class="s2">"C-Means Clustering"</span><span class="p">],</span>
-    <span class="s2">"K-means Clustering"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"K-means"</span><span class="p">,</span> <span class="s2">"Lloyd's Algorithm"</span><span class="p">,</span> <span class="s2">"Hard Clustering"</span><span class="p">,</span> <span class="s2">"Centroid-based Clustering"</span><span class="p">],</span>
-    <span class="s2">"K-nearest Neighbor"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"KNN"</span><span class="p">,</span> <span class="s2">"K-nearest"</span><span class="p">,</span> <span class="s2">"Instance-based Learning"</span><span class="p">,</span> <span class="s2">"Lazy Learning"</span><span class="p">],</span>
+    <span class="s2">"Fuzzy Clustering"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Fuzzy C-means"</span><span class="p">,</span> <span class="s2">"Soft Clustering"</span><span class="p">,</span>
+                         <span class="s2">"Fuzzy K-means"</span><span class="p">,</span> <span class="s2">"C-Means Clustering"</span><span class="p">],</span>
+    <span class="s2">"K-means Clustering"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"K-means"</span><span class="p">,</span> <span class="s2">"Lloyd's Algorithm"</span><span class="p">,</span>
+                           <span class="s2">"Hard Clustering"</span><span class="p">,</span> <span class="s2">"Centroid-based Clustering"</span><span class="p">],</span>
+    <span class="s2">"K-nearest Neighbor"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"KNN"</span><span class="p">,</span> <span class="s2">"K-nearest"</span><span class="p">,</span>
+                           <span class="s2">"Instance-based Learning"</span><span class="p">,</span> <span class="s2">"Lazy Learning"</span><span class="p">],</span>
     <span class="s2">"Markov Process"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Markov Chain"</span><span class="p">,</span> <span class="s2">"Markov Model"</span><span class="p">],</span>
-    <span class="s2">"Support Vector Machine"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"SVM"</span><span class="p">,</span> <span class="s2">"Support Vector Classifier"</span><span class="p">,</span> <span class="s2">"Support Vector Networks"</span><span class="p">,</span> <span class="s2">"Kernel Methods"</span><span class="p">]</span>
+    <span class="s2">"Support Vector Machine"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"SVM"</span><span class="p">,</span> <span class="s2">"Support Vector Classifier"</span><span class="p">,</span>
+                               <span class="s2">"Support Vector Networks"</span><span class="p">,</span> <span class="s2">"Kernel Methods"</span><span class="p">]</span>
 <span class="p">}</span>
 
 <span class="c1"># Define dictionary of sports used in the research along with their aliases</span>
@@ -10558,7 +10578,8 @@ Most common trigrams in Title and Abstract: [(('team', 'performance', 'indicator
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define a function that will find instances of a certain item from a dictionary in text (non-exact matches allowed)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define a function that will find instances of</span>
+<span class="c1"># a certain item from a dictionary in text (non-exact matches allowed)</span>
 <span class="k">def</span> <span class="nf">find_dictionary</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">):</span>
     <span class="n">found</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">aliases</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
